@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Zoomers Hackathons</title>
+
+  <link rel="shortcut icon" href="img/favicon.png">
+  <link type="text/css" href="css/countdown-v=1.0.0.0.css" rel="stylesheet">
+  <link type="text/css" href="css/jquerysctipttop.css" rel="stylesheet">
+  <link type="text/css" href="css/jquery.countdown-v=1.0.0.0.css" rel="stylesheet">
+
+  <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="js/jquery.countdown.min.js"></script>
+  <script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
+</head>
+
+<body>
+  <div>
+    <h1 style="margin-top:150px; text-align:center;">Monday May 18th Hackathon Ends in:</h1>
+    <ul id="zoomers" style="margin-bottom:25px">
+
+    <li>
+    <span class="days">00</span>
+    <p class="days_text">Days</p>
+    </li>
+
+    <li class="seperator">
+    :
+    </li>
+
+    <li>
+    <span class="hours">00</span>
+    <p class="hours_text">Hours</p>
+    </li>
+
+    <li class="seperator">
+    :
+    </li>
+
+    <li>
+    <span class="minutes">00</span>
+    <p class="minutes_text">Minutes</p>
+    </li>
+
+    <li class="seperator">
+    :
+    </li>
+
+    <li>
+    <span class="seconds">00</span>
+    <p class="seconds_text">Seconds</p>
+    </li>
+
+    </ul>
+
+    <script type="text/javascript">
+    $('#zoomers').countdown({
+    date: '05/18/2020 16:30:00',
+    offset: -4,
+    day: 'Day',
+    days: 'Days'
+    }, function () {
+    alert('Done!');
+    });
+    </script>
+  </div>
+
+  <hr />
+
+  <div style="margin-top: -100px">
+    <h2 style="margin-top:150px; text-align:center; font-size:18px">Monday, 18th of May, Second Late[r] Hackathon Ends:</h1>
+    <ul id="zoomers-alt">
+
+    <li>
+    <span class="days">00</span>
+    <p class="days_text">Days</p>
+    </li>
+
+    <li class="seperator">
+    :
+    </li>
+
+    <li>
+    <span class="hours">00</span>
+    <p class="hours_text">Hours</p>
+    </li>
+
+    <li class="seperator">
+    :
+    </li>
+
+    <li>
+    <span class="minutes">00</span>
+    <p class="minutes_text">Minutes</p>
+    </li>
+
+    <li class="seperator">
+    :
+    </li>
+
+    <li>
+    <span class="seconds">00</span>
+    <p class="seconds_text">Seconds</p>
+    </li>
+
+    </ul>
+
+    <script type="text/javascript">
+    $('#zoomers-alt').countdown({
+    date: '05/18/2020 19:30:00',
+    offset: -4,
+    day: 'Day',
+    days: 'Days'
+    }, function () {
+    alert('Done!');
+    });
+    </script>
+  </div>
+  
+
+</body>
+</html>

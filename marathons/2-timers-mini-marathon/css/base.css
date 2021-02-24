@@ -1,0 +1,11 @@
+h1 {
+	font-size: 40px;
+}
+
+h3 {
+  font-style: oblique;
+}
+
+#content {
+  width: 50% !important;
+}

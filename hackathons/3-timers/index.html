@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Zoomers.xyz Semi [Hack-a-]Thons</title>
+
+  <link rel="shortcut icon" href="img/favicon.png">
+  <link type="text/css" href="css/countdown-v=1.0.0.0.css" rel="stylesheet">
+  <link type="text/css" href="css/jquerysctipttop.css" rel="stylesheet">
+  <link type="text/css" href="css/jquery.countdown-v=1.0.0.0.css" rel="stylesheet">
+
+  <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="js/jquery.countdown.min.js"></script>
+  <script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
+  
+  <style>
+  	.the-text {
+  		margin-top: 15px;
+  	}
+  </style>
+</head>
+
+<body>
+      <script type="text/javascript">
+	  	var curr = new Date();
+		var day = curr.getDate();
+		var month = curr.getMonth() + 1;
+		
+		var title = 'Hackathon Hack Part';		
+
+		function refreshAt(hours, minutes, seconds) {
+		    var now = new Date();
+		    var then = new Date();
+		
+		    if(now.getHours() > hours ||
+		       (now.getHours() == hours && now.getMinutes() > minutes) ||
+		        now.getHours() == hours && now.getMinutes() == minutes && now.getSeconds() >= seconds) {
+		        then.setDate(now.getDate() + 1);
+		    }
+		    then.setHours(hours);
+		    then.setMinutes(minutes);
+		    then.setSeconds(seconds);
+		
+		    var timeout = (then.getTime() - now.getTime());
+		    setTimeout(function() { window.location.reload(true); }, timeout);
+		}
+		
+		refreshAt(0,1,0);
+		
+	  </script>
+	  <h1>Semi Hack-a-thon Timers</h1>
+	  <hr class="top-one" />
+  <div class="float-left">
+    <h3>Pit Stop Timer</h3>
+    <ul id="zoomers-one" style="margin-top: 5px; margin-bottom:5px">
+
+	    <li>
+		    <span class="days">00</span>
+		    <p class="the-text days_text">Days</p>
+	    </li>
+		
+	    <li class="seperator">
+		    :
+	    </li>
+		
+	    <li>
+		    <span class="hours">00</span>
+		    <p class="the-text hours_text">Hours</p>
+	    </li>
+		
+	    <li class="seperator">
+		    :
+	    </li>
+		
+	    <li>
+		    <span class="minutes">00</span>
+		    <p class="the-text minutes_text">Minutes</p>
+	    </li>
+    </ul>
+
+    <script type="text/javascript">
+    $('#zoomers-one').countdown( {
+	    date: month + '/' + day + '/2020 13:00:00',
+	    offset: -4,
+	    day: 'Day',
+	    days: 'Days'
+	    } );
+    </script>
+  </div>
+  
+  <div class="float-left">
+    <h3>Stretch Timer</h3>
+    <ul id="zoomers-two" style="margin-top: 5px; margin-bottom:5px">
+
+	    <li>
+		    <span class="days">00</span>
+		    <p class="the-text days_text">Days</p>
+	    </li>
+		
+	    <li class="seperator">
+		    :
+	    </li>
+		
+	    <li>
+		    <span class="hours">00</span>
+		    <p class="the-text hours_text">Hours</p>
+	    </li>
+		
+	    <li class="seperator">
+		    :
+	    </li>
+		
+	    <li>
+		    <span class="minutes">00</span>
+		    <p class="the-text minutes_text">Minutes</p>
+	    </li>
+
+    </ul>
+
+    <script type="text/javascript">
+    $('#zoomers-two').countdown( {
+	    date: month + '/' + day + '/2020 21:00:00',
+	    offset: -4,
+	    day: 'Day',
+	    days: 'Days'
+	    } );
+    </script>
+  </div>
+
+  
+  <!--<hr style="margin-left: 550px; margin-right: 550px; border: 3px dotted #6565d5" />-->
+
+  <div>
+    <h2>Main Timer</h2>
+    <ul style="margin-top: 2.5px" id="zoomers-deux">
+
+	    <li>
+		    <span class="days">00</span>
+		    <p class="days_text">Days</p>
+	    </li>
+	
+	    <li class="seperator">
+		    :
+	    </li>
+	
+	    <li>
+		    <span class="hours">00</span>
+		    <p class="hours_text">Hours</p>
+	    </li>
+	
+	    <li class="seperator">
+		    :
+	    </li>
+	
+	    <li>
+		    <span class="minutes">00</span>
+		    <p class="minutes_text">Minutes</p>
+	    </li>
+
+    </ul>
+
+    <script type="text/javascript">
+    $('#zoomers-deux').countdown( {
+	    date: month + '/' + day + '/2020 17:00:00',
+	    offset: -4,
+	    day: 'Day',
+	    days: 'Days'
+	    } );
+    </script>
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,91 @@
+div.float-left {
+	float: left;
+	width: 50%;
+	margin: 10px 0px 20px 0px;
+}
+
+h1 {
+	top: 2.5em;
+    font-size: 24px;
+    color: #FFF;
+    opacity: .5;
+    font-family: Helvetica,Roboto,Oxygen-Sans,Ubuntu,Cantarell,sans-serif;
+    line-height: 1.4;
+    letter-spacing: .5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+	
+	margin-block-end: 30px;
+	margin-top:20px;
+	margin-bottom: 15px;
+}
+
+
+h2 {
+	top: 2.5em;
+    font-size: 16px;
+    color: #FFF;
+    opacity: .5;
+    font-family: Helvetica,Roboto,Oxygen-Sans,Ubuntu,Cantarell,sans-serif;
+    line-height: 1.2;
+    letter-spacing: .2em;
+    font-weight: 500;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+	
+	margin-block-end: 10px;
+	margin-top:1px;
+	font-style: italic;
+}
+
+ul#zoomers-one, ul#zoomers-two, ul#zoomers-alt, ul#zoomers-deux {
+	list-style: none;
+	margin: 100px 0;
+	padding: 0;
+	display: block;
+	text-align: center;
+	font-family: Helvetica,Roboto,Oxygen-Sans,Ubuntu,Cantarell,sans-serif;
+}
+ul#zoomers-one li, ul#zoomers-two li, ul#zoomers-alt li, ul#zoomers-deux li {
+	display: inline-block;
+}
+ul#zoomers-one li span, ul#zoomers-two li span, ul#zoomers-alt li span, ul#zoomers-deux li span {
+	font-size: 80px;
+	font-weight: bold;
+	line-height: 80px;
+
+}
+ul#zoomers-one li.seperator, ul#zoomers-two li.seperator, ul#zoomers-alt li.seperator, ul#zoomers-deux li.seperator {
+	font-size: 80px;
+	line-height: 70px;
+	vertical-align: top;
+}
+ul#zoomers-one li p, ul#zoomers-two li p, ul#zoomers-alt li p, ul#zoomers-deux li p {
+	color: rgba(255,255,255,.7);
+	font-size: 25px;
+	text-transform: uppercase;
+	letter-spacing: .2em;
+}
+
+ul#zoomers-one, ul#zoomers-two, ul#zoomers-alt, ul#zoomers-deux {
+	margin: 40px 0;
+}
+ul#zoomers-one h2, ul#zoomers-two h2, ul#zoomers-alt h2, ul#zoomers-deux h2 {
+	margin-block-end: 10px;
+}
+ul#zoomers-one li span, ul#zoomers-two li span, ul#zoomers-alt li span, ul#zoomers-deux li span {
+	font-size: 40px;
+	line-height: 40px;
+
+}
+ul#zoomers-one li.seperator, ul#zoomers-two li.seperator, ul#zoomers-alt li.seperator, ul#zoomers-deux li.seperator {
+	font-size: 40px;
+	line-height: 30px;
+}
+ul#zoomers-one li p, ul#zoomers-two li p, ul#zoomers-alt li p, ul#zoomers-deux li p {
+	font-size: 15px;
+	letter-spacing: .1em;
+}
