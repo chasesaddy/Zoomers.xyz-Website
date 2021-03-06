@@ -51,7 +51,7 @@
 		
 	  </script>
 	  
-  <div id=zoomers">
+  <div id=zoomers-root">
 	<ul style="margin-top: 25px" id="zoomers">
 	    <li>
 		    <span class="days">00</span>
@@ -91,7 +91,7 @@
       var urlParams = new URLSearchParams(window.location.search);
       var hour = urlParams.get('hour');
       var min = urlParams.get('min');
-    $('#zoomers-deux').countdown( {
+    $('#zoomers').countdown( {
 	    date: month + '/' + day + '/2021 ' + hour + ':' + min + ':00',
 	    offset: -5,
 	    day: 'Day',
