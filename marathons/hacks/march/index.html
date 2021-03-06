@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Zoomers [Hack-a-]Thons</title>
+
+  <link rel="shortcut icon" href="img/favicon.png">
+  <link type="text/css" href="css/countdown-v=1.0.0.0.css" rel="stylesheet">
+  <link type="text/css" href="css/jquerysctipttop.css" rel="stylesheet">
+  <link type="text/css" href="css/jquery.countdown-v=1.0.0.0.css" rel="stylesheet">
+
+  <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="js/jquery.countdown.min.js"></script>
+  <script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
+  
+  <style>
+  	.the-text {
+  		margin-top: 15px;
+  	}
+  </style>
+</head>
+
+<body>
+      <script type="text/javascript">
+	  	var curr = new Date();
+		var day = curr.getDate();
+		var month = curr.getMonth() + 1;
+		
+		var title = 'Hackathon Hack Part';		
+
+		function refreshAt(hours, minutes, seconds) {
+		    var now = new Date();
+		    var then = new Date();
+		
+		    if(now.getHours() > hours ||
+		       (now.getHours() == hours && now.getMinutes() > minutes) ||
+		        now.getHours() == hours && now.getMinutes() == minutes && now.getSeconds() >= seconds) {
+		        then.setDate(now.getDate() + 1);
+		    }
+		    then.setHours(hours);
+		    then.setMinutes(minutes);
+		    then.setSeconds(seconds);
+		
+		    var timeout = (then.getTime() - now.getTime());
+		    setTimeout(function() { window.location.reload(true); }, timeout);
+		}
+		
+		refreshAt(0,1,0);
+		
+	  </script>
+	  
+  <div class="main-timer">
+	<ul style="margin-top: 25px" id="zoomers-deux">
+	    <li>
+		    <span class="days">00</span>
+		    <p class="days_text">Days</p>
+	    </li>
+	
+	    <li class="seperator">
+		    :
+	    </li>
+	
+	    <li>
+		    <span class="hours">00</span>
+		    <p class="hours_text">Hours</p>
+	    </li>
+	
+	    <li class="seperator">
+		    :
+	    </li>
+	
+	    <li>
+		    <span class="minutes">00</span>
+		    <p class="minutes_text">Minutes</p>
+	    </li>
+		
+	    <li class="seperator">
+		    :
+	    </li>
+		
+	    <li>
+		    <span class="seconds">00</span>
+		    <p class="seconds_text">Seconds</p>
+	    </li>
+
+    </ul>
+
+    <script type="text/javascript">
+      var urlParams = new URLSearchParams(window.location.search);
+      var hour = urlParams.get('hour');
+      var min = urlParams.get('min');
+    $('#zoomers-deux').countdown( {
+	    date: month + '/' + day + '/2021 ' + hour + ':' + min + ':00',
+	    offset: -5,
+	    day: 'Day',
+	    days: 'Days'
+	    } );
+    </script>
+  </div> 
+  
+</body>
+</html>
