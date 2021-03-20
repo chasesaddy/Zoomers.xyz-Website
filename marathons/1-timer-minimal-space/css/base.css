@@ -1,0 +1,16 @@
+h3 {
+  font-style: oblique;
+}
+
+h1, h2, h3, h4 {
+  margin-top: 0.5px;
+}
+
+h1 {
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+ul#zoomers-deux {
+  margin-top: 2px;
+}
