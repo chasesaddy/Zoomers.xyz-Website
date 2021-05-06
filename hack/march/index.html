@@ -52,41 +52,42 @@
 	  </script>
 	  
   <div id=zoomers-root">
-	<ul style="margin-top: 25px" id="zoomers">
-	    <li>
-		    <span class="days">00</span>
-		    <p class="days_text">Days</p>
-	    </li>
+    <div>
+      <ul style="margin-top: 25px" id="zoomers">
+  	    <li>
+  		    <span class="days">00</span>
+  		    <p class="days_text">Days</p>
+  	    </li>
 	
-	    <li class="seperator">
-		    :
-	    </li>
+  	    <li class="seperator">
+  		    :
+  	    </li>
 	
-	    <li>
-		    <span class="hours">00</span>
-		    <p class="hours_text">Hours</p>
-	    </li>
+  	    <li>
+  		    <span class="hours">00</span>
+  		    <p class="hours_text">Hours</p>
+  	    </li>
 	
-	    <li class="seperator">
-		    :
-	    </li>
+  	    <li class="seperator">
+  		    :
+  	    </li>
 	
-	    <li>
-		    <span class="minutes">00</span>
-		    <p class="minutes_text">Minutes</p>
-	    </li>
+  	    <li>
+  		    <span class="minutes">00</span>
+  		    <p class="minutes_text">Minutes</p>
+  	    </li>
 		
-	    <li class="seperator">
-		    :
-	    </li>
+  	    <li class="seperator">
+  		    :
+  	    </li>
 		
-	    <li>
-		    <span class="seconds">00</span>
-		    <p class="seconds_text">Seconds</p>
-	    </li>
-
-    </ul>
-
+  	    <li>
+  		    <span class="seconds">00</span>
+  		    <p class="seconds_text">Seconds</p>
+  	    </li>
+      </ul>
+    </div>
+    
     <script type="text/javascript">
       var urlParams = new URLSearchParams(window.location.search);
       var hour = urlParams.get('hour');
@@ -98,7 +99,17 @@
 	    days: 'Days'
 	    } );
     </script>
-  </div> 
+    
+    <div class="moi-center">
+      <iframe      
+      class="crypto" src="https://widget.coincodex.com/?type=1&ticker=dogecoin&history_days=7&chartLineColor=cb9800&chartFillColor=e1b303&textColor1=ffffff&textColor2=617283&linkColor=ffffff&borderColor=4f54bc&backgroundColor=4f54bc">
+      </iframe>
+                
+      <iframe
+      class="crypto" src="https://widget.coincodex.com/?type=1&ticker=ethereum&history_days=7&chartLineColor=cb9800&chartFillColor=e1b303&textColor1=ffffff&textColor2=617283&linkColor=ffffff&borderColor=4f54bc&backgroundColor=4f54bc">
+      </iframe>
+    </div>   
+</div>
   
 </body>
 </html>

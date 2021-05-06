@@ -5,3 +5,21 @@ body {
 	font: normal 12px 'Open Sans', sans-serif;
 	margin-top: 20px;
 }
+
+.moi-center {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  text-align: center;
+}
+
+iframe.crypto {
+    width: 350px;
+    height: 355px;
+    
+    padding: 0 25px;
+    
+    border: none;
+    border-style: none;
+}
