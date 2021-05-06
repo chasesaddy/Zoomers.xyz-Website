@@ -1,0 +1,32 @@
+<html>
+<head>
+<style>
+html, body {height: 100%; overflow:hidden;}
+.iframe-container iframe {
+   border: 0;
+   height: 100%;
+   left: 0;
+   position: absolute;
+   top: 0;
+   width: 100%;
+}
+</style>
+</head>
+
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script language="javascript">
+  setInterval( () => {
+	location.reload();
+   }, 60*30*1000 );
+</script>
+
+<body>
+	<div id="include-from-outside"></div>
+	<script type="text/javascript">
+    $("#include-from-outside").ajax({
+      type: 'GET',
+      url: 'https://cuckoo.team/zoomalt'
+    });
+	</script>
+</body>
