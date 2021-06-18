@@ -35,8 +35,6 @@ function TimerView()
     this._addListeners();
 
     this.loadAssets();
-
-    this.toggleFullScreen();
 }
 
 /**
@@ -79,38 +77,6 @@ TimerView.EVENT_STOP_ROUND          = "EVENT_STOP_ROUND";
 TimerView.EVENT_START_COFFEEBREAK   = "EVENT_START_COFFEEBREAK";
 TimerView.EVENT_ROUND_TIME_EDIT     = "EVENT_ROUND_TIME_EDIT";
 TimerView.LOW_TIME                  = 2;
-
-/**
- *
- */
-TimerView.prototype.toggleFullScreen = function() {
-
-    if (!document.fullscreenElement &&    // alternative standard method
-
-        !document.mozFullScreenElement && !document.webkitFullscreenElement) {  // current working methods
-        if (document.documentElement.requestFullscreen) {
-            document.documentElement.requestFullscreen();
-        } else if (document.documentElement.mozRequestFullScreen) {
-            document.documentElement.mozRequestFullScreen();
-        } else if (document.documentElement.webkitRequestFullscreen) {
-            document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
-        }
-
-        ga('send', 'event', 'Application', 'Full Screen open');
-
-    } else {
-
-        if (document.cancelFullScreen) {
-            document.cancelFullScreen();
-        } else if (document.mozCancelFullScreen) {
-            document.mozCancelFullScreen();
-        } else if (document.webkitCancelFullScreen) {
-            document.webkitCancelFullScreen();
-        }
-
-        ga('send', 'event', 'Application', 'Full Screen close');
-    }
-}
 
 /**
  *
@@ -221,9 +187,9 @@ TimerView.prototype.startSession = function ()
  *
  */
 TimerView.prototype.loadAssets = function(){
-    createjs.Sound.registerSound("/assets/snd/tick.mp3", "tick");
-    createjs.Sound.registerSound("/assets/snd/alarm.mp3", "alarm");
-    createjs.Sound.registerSound("/assets/snd/blop.mp3", "start");
+    createjs.Sound.registerSound("assets/snd/tick.mp3", "tick");
+    createjs.Sound.registerSound("assets/snd/alarm.mp3", "alarm");
+    createjs.Sound.registerSound("assets/snd/blop.mp3", "start");
 };
 
 /**
@@ -236,7 +202,6 @@ TimerView.prototype._addListeners = function ()
     this._btnSoundToggle.click( this._toggleSound.bind(this) );
     this._btnStartTimer.click( this._startRoundHandler.bind(this, "Button") );
     this._btnStopTimer.click( this._stopRoundHandler.bind(this) );
-    this._btnFullscreen.click( this.toggleFullScreen.bind(this) );
     this._btnStartCoffeeBreak.click( this._startCoffeeBreakClickHandler.bind(this) );
 
     // start timer on space
@@ -337,16 +302,10 @@ TimerView.prototype._toggleSound = function(){
         createjs.Sound.setMute(false);
         this._btnSoundToggle.removeClass("muted");
 
-        // track
-        ga('send', 'event', 'Application', 'Sound On');
-
     }else{
 
         this._btnSoundToggle.addClass("muted");
         createjs.Sound.setMute(true);
-
-        // track
-        ga('send', 'event', 'Application', 'Sound Off');
     }
 };
 
@@ -364,9 +323,6 @@ TimerView.prototype._toggleSetup = function(){
         this.dispatchEvent( TimerView.EVENT_STOP_ROUND );
         this._isSetupMode = true;
 
-        // track setup click
-        ga('send', 'event', 'Application', 'Setup View');
-
         return;
     }
 
@@ -377,7 +333,6 @@ TimerView.prototype._toggleSetup = function(){
 
         setupTime += thisTimerView._deltas[index] * $(this).text();
     });
-    ga('send', 'event', 'Setup', 'New Time Setup', 'Regular Clock', setupTime);
 
     this._isSetupMode = false;
 };
@@ -397,9 +352,6 @@ TimerView.prototype._startRoundHandler = function ( trackSource )
     createjs.Sound.play("blop");
 
     this._showFlash();
-
-    // track
-    ga('send', 'event', 'Clock', 'Start new round', trackSource);
 };
 
 /**
@@ -419,6 +371,4 @@ TimerView.prototype._stopRoundHandler = function ()
 TimerView.prototype._startCoffeeBreakClickHandler = function ()
 {
     this.dispatchEvent( TimerView.EVENT_START_COFFEEBREAK );
-
-    ga('send', 'event', 'Clock', 'Start Coffee Break');
 };
