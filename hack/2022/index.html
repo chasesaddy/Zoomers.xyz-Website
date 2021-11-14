@@ -89,8 +89,8 @@
     </div>
     
     <script type="text/javascript">
-      var urlParams = new URLSearchParams(window.location.search);
-      var theDay = urlParams.get('day');
+      var urlParams = new URLSearchParams(window.location.search);      
+      var theDay = ( urlParams.get('day') ) ? parseInt( urlParams.get('day') ) : curr.getDate();
       var hour = urlParams.get('hour');
       var min = urlParams.get('min');
     $('#zoomers').countdown( {
