@@ -1,126 +1,134 @@
-		<style>
-			body {
-				background: transparent;
-				color: black;
-				border: 0 transparent;
-				padding: 2pt;
-				margin: 0;
-				text-align: center;
-				overflow: hidden;
-			}
+<style>
+	body {
+		background: transparent;
+		color: black;
+		border: 0 transparent;
+		padding: 2pt;
+		margin: 0;
+		text-align: center;
+		overflow: hidden;
+	}
+  
+  #core-display {
+    height: 100vh;
+    width: 100%;
+        display: inline-block;
+  }
+	.info {
+/*    display: inline-block;*/
+/*    width: auto;*/
+/*    height: 32pt;*/
 
-			.info {
-				display: inline-block;
-				width: auto;
-				height: 32pt;
+		padding: 4pt 8pt;
+		margin: 0;
+		margin-top: 16pt;
 
-				padding: 4pt 8pt;
-				margin: 0;
-				margin-top: 16pt;
+		font-size: 24pt;
+		font-weight: bold;
+		font-family: "Roboto", "Open Sans", sans-serif, serif;
 
-				font-size: 24pt;
-				font-weight: bold;
-				font-family: "Roboto", "Open Sans", sans-serif, serif;
+		color: white;
+		opacity: 0.0;
+		
+		background: rgba(0, 0, 0, 0.75);
+		box-shadow: 0px 0px 6pt 1pt rgba(0, 0, 0, 1.0);
+		
+		border: 1px solid black;
+		border-radius: 8px;
+	}
 
-				color: white;
-				opacity: 0.0;
-				
-				background: rgba(0, 0, 0, 0.75);
-				box-shadow: 0px 0px 6pt 1pt rgba(0, 0, 0, 1.0);
-				
-				border: 1px solid black;
-				border-radius: 8px;
-			}
+	.info .logo {
+/*    width: 64pt;
+    height: 64pt;*/
+    float: left;
+    width: 20%;
+    height: 20%;    
+		margin: 0;
+		margin-top: -18pt;
+		margin-left: -6pt;
+		margin-right: 4pt;
+		padding: 1px;
+		
+		background: rgba(255,255,255, 0.5);
+		box-shadow: 0px 0px 6pt -2pt rgba(255, 255, 255, 1.0);
+		border: 1px solid black;
+		border-radius: 4px;
+	}
 
-			.info .logo {
-				width: 64pt;
-				height: 64pt;
-				margin: 0;
-				margin-top: -18pt;
-				margin-left: -6pt;
-				margin-right: 4pt;
-				padding: 1px;
-				
-				background: rgba(255,255,255, 0.5);
-				box-shadow: 0px 0px 6pt -2pt rgba(255, 255, 255, 1.0);
-				border: 1px solid black;
-				border-radius: 4px;
-			}
+	.info .artist,
+	.info .separator,
+	.info .title {
+		vertical-align: top;
+	}
 
-			.info .artist,
-			.info .separator,
-			.info .title {
-				vertical-align: top;
-			}
+	.slideout {
+		animation-name: slide_out;
+		animation-direction: normal;
+		animation-duration: 500ms;
+		animation-delay: 0s;
+		animation-fill-mode: both;
+		animation-iteration-count: 1;
+		animation-play-state: running;
+		animation-timing-function: ease-in;
+	}
 
-			.slideout {
-				animation-name: slide_out;
-				animation-direction: normal;
-				animation-duration: 500ms;
-				animation-delay: 0s;
-				animation-fill-mode: both;
-				animation-iteration-count: 1;
-				animation-play-state: running;
-				animation-timing-function: ease-in;
-			}
+	.slidein {
+		animation-name: slide_in;
+		animation-direction: normal;
+		animation-duration: 500ms;
+		animation-delay: 0s;
+		animation-fill-mode: both;
+		animation-iteration-count: 1;
+		animation-play-state: running;
+		animation-timing-function: ease-out;
+	}
 
-			.slidein {
-				animation-name: slide_in;
-				animation-direction: normal;
-				animation-duration: 500ms;
-				animation-delay: 0s;
-				animation-fill-mode: both;
-				animation-iteration-count: 1;
-				animation-play-state: running;
-				animation-timing-function: ease-out;
-			}
+	.flip {
+		animation-name: slide_in, flip;
+		animation-direction: normal;
+		animation-duration: 500ms;
+		animation-delay: 0s;
+		animation-fill-mode: both;
+		animation-iteration-count: 1;
+		animation-play-state: running;
+		animation-timing-function: linear;
+	}
 
-			.flip {
-				animation-name: slide_in, flip;
-				animation-direction: normal;
-				animation-duration: 500ms;
-				animation-delay: 0s;
-				animation-fill-mode: both;
-				animation-iteration-count: 1;
-				animation-play-state: running;
-				animation-timing-function: linear;
-			}
+	@keyframes slide_out {
+		from {					
+			margin-top: 16pt;
+			opacity: 1.0;
+		}
+		to {
+			margin-top: 100%;
+			opacity: 0.0;
+		}
+	}
+	
 
-			@keyframes slide_out {
-				from {					
-					margin-top: 16pt;
-					opacity: 1.0;
-				}
-				to {
-					margin-top: 100%;
-					opacity: 0.0;
-				}
-			}
-			
+	@keyframes slide_in {
+		from {
+			margin-top: 100%;
+			opacity: 0.0;
+		}
+		to {
+			margin-top: 16pt;
+			opacity: 1.0;
+		}
+	}
 
-			@keyframes slide_in {
-				from {
-					margin-top: 100%;
-					opacity: 0.0;
-				}
-				to {
-					margin-top: 16pt;
-					opacity: 1.0;
-				}
-			}
-
-			@keyframes flip {
-				0% {
-					transform: rotate3d(0);
-				}
-				40% {
-					transform: rotate3d(1, 0, 0, 0.25turn);
-				}
-				60% {
-					transform: rotate3d(1, 0, 0, 0.25turn);
-				}
-				100% {
-					transform: rotate3d(0);
-				}
-			}
-		</style>
+	@keyframes flip {
+		0% {
+			transform: rotate3d(0);
+		}
+		40% {
+			transform: rotate3d(1, 0, 0, 0.25turn);
+		}
+		60% {
+			transform: rotate3d(1, 0, 0, 0.25turn);
+		}
+		100% {
+			transform: rotate3d(0);
+		}
+	}
+</style>

@@ -1,19 +1,23 @@
 <!--This is https://stream.xaymar.com/nowplaying.html code. It stopped being hosted in 2022. I took the code I could find from it -->
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Last.FM Now Playing</title>
-		<meta charset="UTF-8">
+<html lang="en">
+  <head>
+    <title>Last.FM Now Playing</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel=stylesheet href="./nowplaying/dope.css" type="text/css" media=screen />
 	</head>
   
 	<body>
-    <link rel=stylesheet href="./nowplaying/dope.css" type="text/css" media=screen />
-		<div class="info slideout">
-			<img class="logo" id="logo" src="./nowplaying/logos/playboi-carti_logo_3.jpg" />
+    <div id="core-display">
+  		<div class="info slideout">
+  			<img class="logo" id="logo" src="./nowplaying/logos/playboi-carti_logo_3.jpg" alt="playboi-carti-logo-3" />
         <span class="artist" id="artist">Now</span>
         <span class="separator">&nbsp;&ndash;&nbsp;</span>
         <span class="title" id="title">Playing</span>
-		</div>
+  		</div>
+    </div>
 
     <script>
       var globalLocation = window.location;

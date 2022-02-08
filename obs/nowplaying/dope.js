@@ -1,12 +1,12 @@
-	let api = {
+	const api = {
 		key: "883710f63e4383bc2fd1e058e89ea0ba",
 	};
-  let params = new URLSearchParams( globalLocation.search );
+  const params = new URLSearchParams( globalLocation.search );
 	let playing = false;
-	let imgcache = new Image();
+	const imgcache = new Image();
 
 	function requestUpdate(api_key, user) {
-		let url = `https://ws.audioscrobbler.com/2.0/?api_key=${api_key}&method=user.getRecentTracks&user=${user}&extended=1&limit=1&format=json`;
+		const url = `https://ws.audioscrobbler.com/2.0/?api_key=${api_key}&method=user.getRecentTracks&user=${user}&extended=1&limit=1&format=json`;
 
 		let request = new Request(url, {
 			"method": "GET",
@@ -16,19 +16,19 @@
 	}
 
 	function slide_out() {
-		let el_info = document.querySelector(".info");
+		const el_info = document.querySelector(".info");
 		el_info.classList.add("slideout");
 		el_info.classList.remove("slidein");
 	}
 
 	function slide_in() {
-		let el_info = document.querySelector(".info");
+		const el_info = document.querySelector(".info");
 		el_info.classList.add("slidein");
 		el_info.classList.remove("slideout");
 	}
 
 	function flip(cb) {
-		let el_info = document.querySelector(".info");
+		const el_info = document.querySelector(".info");
 		el_info.classList.add("flip");
 		setTimeout(cb, 200);
 		setTimeout(function() {el_info.classList.remove("flip");}, 500);
@@ -106,17 +106,7 @@
 		rq.then(successHandler, failureHandler);
 		rq.catch(failureHandler);
 	}
-
-	function zoom() {
-		let width = document.documentElement.clientWidth;
-		let height = document.documentElement.clientHeight;
-		let csize = document.documentElement.getBoundingClientRect();
-		let wscale = width / csize.width;
-		let hscale = height / csize.height;
-		document.body.style.zoom = hscale;
-	}
 	
 	(function() {
-		zoom();
 		tick();
 	})();
