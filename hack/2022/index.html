@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 
-  <title>Zoomers [Hack-a-]Thons</title>
+  <title>Zoomers Marathon + [Hack-a-]Thons</title>
 
   <link rel="shortcut icon" href="img/favicon.png">
   <link type="text/css" href="css/countdown-v=1.0.0.0.css" rel="stylesheet">
@@ -30,24 +30,26 @@
 		
 		var title = 'Hackathon Hack Part';		
 
-		function refreshAt(hours, minutes, seconds) {
+		function refreshAt( hours, minutes, seconds ) {
 		    var now = new Date();
 		    var then = new Date();
 		
-		    if (now.getHours() > hours ||
-		       (now.getHours() == hours && now.getMinutes() > minutes) ||
-		        now.getHours() == hours && now.getMinutes() == minutes && now.getSeconds() >= seconds) {
-		        then.setDate(now.getDate() + 1);
+		    if ( now.getHours() > hours ||
+		       ( now.getHours() == hours && now.getMinutes() > minutes ) ||
+		        now.getHours() == hours && now.getMinutes() == minutes && now.getSeconds() >= seconds )
+		    {
+		        then.setDate( now.getDate() + 1 );
 		    }
-		    then.setHours(hours);
-		    then.setMinutes(minutes);
-		    then.setSeconds(seconds);
+
+		    then.setHours( hours );
+		    then.setMinutes( minutes );
+		    then.setSeconds( seconds );
 		
-		    var timeout = (then.getTime() - now.getTime());
-		    setTimeout(function() { window.location.reload(true); }, timeout);
+		    var timeout = ( then.getTime() - now.getTime() );
+		    setTimeout( function() { window.location.reload( true ); }, timeout );
 		}
 		
-		refreshAt(0,1,0);
+		refreshAt( 0,1,0 );
 		
 	  </script>
 	  
@@ -89,13 +91,16 @@
     </div>
     
     <script type="text/javascript">
-      var urlParams = new URLSearchParams(window.location.search);      
-      var theDay = ( urlParams.get('day') ) ? parseInt( urlParams.get('day') ) : curr.getDate();
-      var hour = urlParams.get('hour');
-      var min = urlParams.get('min');
-    $('#zoomers').countdown( {
-	    date: month + '/' + theDay + '/2022 ' + hour + ':' + min + ':00',
-	    offset: 0,
+      var urlParams = new URLSearchParams( window.location.search );
+      var directMonth = urlParams.get( 'month' )
+      var directDay = urlParams.get( 'day' )
+			var theMonth = ( directMonth ) ? parseInt( directMonth ) : month;
+      var theDay = ( directDay ) ? parseInt( directDay ) : day;
+      var hour = urlParams.get( 'hour' );
+      var min = urlParams.get( 'min' );
+    $( '#zoomers' ).countdown( {
+	    date: theMonth + '/' + theDay + '/2022 ' + hour + ':' + min + ':00',
+	    offset: -4,
 	    day: 'Day',
 	    days: 'Days'
 	    } );
